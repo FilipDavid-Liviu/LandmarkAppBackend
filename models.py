@@ -18,7 +18,7 @@ class Landmark(Base):
     name = Column(String(100), nullable=False)
     type = Column(String(100), nullable=False)
     description = Column(Text)
-    photo_url = Column(Text)
+    image = Column(Text)
 
 class User(Base):
     __tablename__ = "users"

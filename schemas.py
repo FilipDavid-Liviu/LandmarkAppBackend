@@ -7,7 +7,7 @@ class LandmarkBase(BaseModel):
     name: str = Field(..., min_length=1, max_length=100)
     type: str = Field(..., min_length=1, max_length=100)
     description: Optional[str] = None
-    photo_url: Optional[str] = None
+    image: Optional[str] = None
 
 class LandmarkCreate(LandmarkBase):
     id: Optional[int] = None 
