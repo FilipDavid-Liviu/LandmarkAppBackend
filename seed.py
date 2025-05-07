@@ -17,6 +17,7 @@ dummy_data = [
         "name": "St. Basil's Cathedral",
         "type": "Place of Worship",
         "description": "The Cathedral of Vasily the Blessed, commonly known as Saint Basil's Cathedral, is a church in Red Square in Moscow, Russia.",
+        "image": "http://localhost:8000/static/photos/1.jpg"
     },
     {
         "lat": 48.8584,
@@ -24,6 +25,7 @@ dummy_data = [
         "name": "Eiffel Tower",
         "type": "Monument",
         "description": "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France.",
+        "image": "http://localhost:8000/static/photos/2.jpg"
     },
     {
         "lat": 40.6892,
@@ -31,6 +33,7 @@ dummy_data = [
         "name": "Statue of Liberty",
         "type": "Monument",
         "description": "The Statue of Liberty is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City.",
+        "image": "http://localhost:8000/static/photos/3.jpg"
     },
     {
         "lat": 40.415853,
