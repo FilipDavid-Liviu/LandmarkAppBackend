@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from models import Landmark
+from models import Landmark, User
 from database import SessionLocal
 
 def seed_landmarks():
@@ -9,7 +9,7 @@ def seed_landmarks():
             db.add(Landmark(**l))
         db.commit()
     db.close()
-
+code = "http://localhost:8000/static/photos/.jpg"
 dummy_data = [
     {
         "lat": 55.7526,
@@ -41,6 +41,7 @@ dummy_data = [
         "name": "Baku Ateshgah",
         "type": "Place of Worship",
         "description": "The Ateshgah of Baku is a Zoroastrian temple in Surakhani, a suburb in Baku, Azerbaijan.",
+        "image": "http://localhost:8000/static/photos/4.jpg"
     },
     {
         "lat": 34.83189,
@@ -48,6 +49,7 @@ dummy_data = [
         "name": "Bamiyan Buddhas",
         "type": "Religious Monument",
         "description": "The Buddhas of Bamiyan were two 6th-century monumental statues of Gautama Buddha carved into the side of a cliff in the Bamyan valley in the Hazarajat region of central Afghanistan",
+        "image": "http://localhost:8000/static/photos/5.jpg"
     },
     {
         "lat": 41.009034,
@@ -55,6 +57,7 @@ dummy_data = [
         "name": "Hagia Sophia",
         "type": "Place of Worship",
         "description": "Hagia Sophia is a former Greek Orthodox Christian patriarchal cathedral, later an Ottoman imperial mosque and now a museum in Istanbul, Turkey.",
+        "image": "http://localhost:8000/static/photos/6.jpg"
     },
     {
         "lat": 34.839882,
@@ -62,6 +65,7 @@ dummy_data = [
         "name": "Himeji Castle",
         "type": "Fortification",
         "description": "Himeji Castle is a hilltop Japanese castle complex situated in the city of Himeji which is located in the Hyōgo Prefecture of Japan.",
+        "image": "http://localhost:8000/static/photos/7.jpg"
     },
     {
         "lat": 51.1789,
@@ -69,6 +73,7 @@ dummy_data = [
         "name": "Stonehenge",
         "type": "Ancient Ruins",
         "description": "Stonehenge is a prehistoric monument in Wiltshire, England, two miles west of Amesbury. It consists of a ring of standing stones, each around 13 feet high, seven feet wide, and weighing around 25 tons.",
+        "image": "http://localhost:8000/static/photos/8.jpg"
     },
     {
         "lat": 19.887595,
@@ -76,6 +81,7 @@ dummy_data = [
         "name": "Konark Sun Temple",
         "type": "Place of Worship",
         "description": "Konark Sun Temple is a 13th-century CE Sun Temple at Konark about 35 kilometres northeast from Puri on the coastline of Odisha, India.",
+        "image": "http://localhost:8000/static/photos/9.jpg"
     },
     {
         "lat": 16.7754,
@@ -83,6 +89,7 @@ dummy_data = [
         "name": "Djinguereber Mosque",
         "type": "Place of Worship",
         "description": "The Djinguereber Mosque in Timbuktu, Mali is a famous learning center of Mali built in 1327, and cited as one of the three oldest mosques in the western Saharan region.",
+        "image": "http://localhost:8000/static/photos/10.jpg"
     },
     {
         "lat": 41.8902,
@@ -90,6 +97,7 @@ dummy_data = [
         "name": "Colosseum",
         "type": "Ancient Ruins",
         "description": "The Colosseum is an oval amphitheatre in the centre of the city of Rome, Italy, the largest ancient amphitheatre ever built.",
+        "image": "http://localhost:8000/static/photos/11.jpg"
     },
     {
         "lat": 29.9792,
@@ -239,3 +247,18 @@ dummy_data = [
         "description": "The Kaaba is Islam's holiest site. Situated at the center of the Masjid al-Haram mosque, it is a cuboid-shaped building. Covered by a black silk curtain known as the Kiswah, the Kaaba serves as the qibla, the direction Muslims face during their five daily prayers."
     }
 ]
+
+
+def seed_users():
+    db: Session = SessionLocal()
+    if db.query(User).count() == 0:
+        dummy_users = [
+            {"username": "david", "password": "abc", "is_admin": True},
+            {"username": "ami", "password": "aa", "is_admin": False},
+        ]
+        for user_data in dummy_users:
+            user = User(username=user_data["username"], is_admin=user_data["is_admin"])
+            user.set_password(user_data["password"])
+            db.add(user)
+        db.commit()
+    db.close()

@@ -8,8 +8,8 @@ import logging
 from fake import populate_db_fakes
 from database import engine, get_db
 from models import Base
-from seed import seed_landmarks
-from routes import photo_calls, get_landmark_calls, cud_landmark_calls
+from seed import seed_landmarks, seed_users
+from routes import photo_calls, get_landmark_calls, cud_landmark_calls, user_calls, saved_landmarks_calls
 
 logging.basicConfig(
     filename="performance_log.txt",
@@ -19,9 +19,12 @@ logging.basicConfig(
 
 
 app = FastAPI()
-app.include_router(photo_calls.router)
+app.include_router(user_calls.router)
 app.include_router(get_landmark_calls.router)
 app.include_router(cud_landmark_calls.router)
+app.include_router(photo_calls.router)
+app.include_router(saved_landmarks_calls.router)
+
 origins = [
     "*"
 ]
@@ -35,6 +38,7 @@ app.add_middleware(
 
 Base.metadata.create_all(bind=engine)
 seed_landmarks()
+seed_users()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 

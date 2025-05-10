@@ -4,10 +4,11 @@ from typing import List, Optional
 import time
 import logging
 
-from models import Landmark as LandmarkModel
+from models import Landmark as LandmarkModel, User
 from database import get_db
 from schemas import Landmark
-from utils import normalize_search_text, normalize_column, abs_column
+from utils.utils import normalize_search_text, normalize_column, abs_column
+from auth import get_current_user
 
 router = APIRouter()
 
