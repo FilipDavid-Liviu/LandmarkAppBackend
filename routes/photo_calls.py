@@ -3,9 +3,9 @@ from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 
 from models import Landmark as LandmarkModel, User
-from database import get_db
+from api.core.deps import get_db
 from utils.photo_utils import process_image, delete_photo_with_landmark_id
-from auth import get_current_user
+from api.core.auth import get_current_user
 
 router = APIRouter()
 

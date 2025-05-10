@@ -1,57 +1,62 @@
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
-import logging
+from contextlib import asynccontextmanager
 
 from fake import populate_db_fakes
-from database import engine, get_db
-from models import Base
-from seed import seed_landmarks, seed_users
-from routes import photo_calls, get_landmark_calls, cud_landmark_calls, user_calls, saved_landmarks_calls
-
-logging.basicConfig(
-    filename="performance_log.txt",
-    level=logging.INFO,
-    format="%(asctime)s - %(message)s"
+from db import seed_all, engine
+from api.core.deps import get_db
+from api.endpoints import (
+    landmark_cud_routes,
+    landmark_get_routes,
+    photo_routes,
+    user_routes,
+    saved_landmarks_routes
 )
+from models import Base
+from exceptions.exceptions import DatabaseError
+from api.core.config import settings
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    try:
+        Base.metadata.create_all(bind=engine)
+        seed_all()
+        yield
+    except Exception as e:
+        raise DatabaseError(f"Error during application startup: {str(e)}")
 
-app = FastAPI()
-app.include_router(user_calls.router)
-app.include_router(get_landmark_calls.router)
-app.include_router(cud_landmark_calls.router)
-app.include_router(photo_calls.router)
-app.include_router(saved_landmarks_calls.router)
+app = FastAPI(lifespan=lifespan)
+app.include_router(user_routes.router)
+app.include_router(landmark_get_routes.router)
+app.include_router(saved_landmarks_routes.router)
+app.include_router(landmark_cud_routes.router)
+app.include_router(photo_routes.router)
 
-origins = [
-    "*"
-]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=settings.CORS_ORIGINS,
+    allow_credentials=settings.CORS_ALLOW_CREDENTIALS,
+    allow_methods=settings.CORS_ALLOW_METHODS,
+    allow_headers=settings.CORS_ALLOW_HEADERS,
 )
 
-Base.metadata.create_all(bind=engine)
-seed_landmarks()
-seed_users()
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
+app.mount("/static", StaticFiles(directory=settings.STATIC_DIR), name="static")
 
 @app.get("/health")
 def health_check():
     return {"status": "OK"}
 
-
 @app.post("/populate_fake_data")
-def populate_fake_data(db: Session = Depends(get_db), num_landmarks: int = 10000):
+def populate_fake_data(
+    db: Session = Depends(get_db),
+    num_landmarks: int = settings.DEFAULT_FAKE_LANDMARKS
+):
     try:
-        populate_db_fakes(db, num_landmarks)
+        populate_db_fakes(db, num_landmarks, settings.FAKE_BATCH_SIZE)
         return {"message": "Database populated with fake data"}
     except Exception as e:
-        return JSONResponse(status_code=500, content={"error": str(e)})
+        raise HTTPException(status_code=500, detail=str(e))
         

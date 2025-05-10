@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from models import Landmark as LandmarkModel, User
-from database import get_db
-from auth import get_current_user
+from api.core.deps import get_db
+from api.core.auth import get_current_user
 
 router = APIRouter()
 

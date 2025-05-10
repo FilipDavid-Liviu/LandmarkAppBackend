@@ -3,9 +3,9 @@ from sqlalchemy.orm import Session
 from fastapi.security import OAuth2PasswordRequestForm
 
 from models import User
-from database import get_db
+from api.core.deps import get_db
 from schemas import UserCreate
-import auth
+import api.core.auth as auth
 
 router = APIRouter()
 

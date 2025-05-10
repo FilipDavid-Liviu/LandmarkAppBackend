@@ -1,0 +1,25 @@
+2025-05-10 15:44:05,017 - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\Landmark\maps-app-backend\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-05-10 15:45:27,659 - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\Landmark\maps-app-backend\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-05-11 01:18:12,806 - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\Landmark\maps-app-backend\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-05-11 01:18:41,086 - Query time with search='a', sort='2': 0.0061 seconds | Results: 31
+2025-05-11 01:27:12,014 - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "D:\Landmark\maps-app-backend\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
