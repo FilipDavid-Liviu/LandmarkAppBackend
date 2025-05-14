@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 from models import User
 from repositories.user_repository import save_landmark_for_user, unsave_landmark_for_user, get_user_saved_landmarks
 from repositories.landmark_repository import get_landmark_by_id
+from repositories.log_repository import log_landmark_save, log_landmark_unsave
 from exceptions.exceptions import (
     LandmarkNotFoundError, 
     SavedLandmarkError,
@@ -19,6 +20,7 @@ def save_landmark_service(db: Session, user: User, landmark_id: int):
 
     try:
         save_landmark_for_user(db, user, landmark)
+        log_landmark_save(db, user.id, landmark_id)
         return {"message": "Landmark saved successfully"}
     except Exception as e:
         raise SavedLandmarkError(f"Error saving landmark: {str(e)}")
@@ -34,6 +36,7 @@ def unsave_landmark_service(db: Session, user: User, landmark_id: int):
 
     try:
         unsave_landmark_for_user(db, user, landmark)
+        log_landmark_unsave(db, user.id, landmark_id)
         return {"message": "Landmark unsaved successfully"}
     except Exception as e:
         raise SavedLandmarkError(f"Error unsaving landmark: {str(e)}")

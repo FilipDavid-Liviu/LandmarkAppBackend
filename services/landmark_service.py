@@ -11,6 +11,11 @@ from repositories.landmark_repository import (
     get_landmarks_by_name,
     get_landmarks_by_name_type_sorted,
 )
+from repositories.log_repository import (
+    log_landmark_creation,
+    log_landmark_update,
+    log_landmark_deletion
+)
 from utils.photo_utils import delete_photo_with_landmark_id
 from exceptions.exceptions import LandmarkNotFoundError, UnauthorizedError
 
@@ -18,7 +23,9 @@ from exceptions.exceptions import LandmarkNotFoundError, UnauthorizedError
 def add_landmark_service(db: Session, user: User, landmark_data: dict):
     if not user.is_admin:
         raise UnauthorizedError("User does not have admin privileges")
-    return create_landmark(db, landmark_data)
+    landmark = create_landmark(db, landmark_data)
+    log_landmark_creation(db, user.id, landmark.id)
+    return landmark
 
 
 def update_landmark_service(db: Session, user: User, landmark_id: int, data: dict):
@@ -29,7 +36,9 @@ def update_landmark_service(db: Session, user: User, landmark_id: int, data: dic
     if not landmark:
         raise LandmarkNotFoundError(f"Landmark with id {landmark_id} not found")
 
-    return update_landmark(db, landmark, data)
+    updated_landmark = update_landmark(db, landmark, data)
+    log_landmark_update(db, user.id, landmark_id)
+    return updated_landmark
 
 
 def delete_landmark_service(db: Session, user: User, landmark_id: int):
@@ -42,6 +51,7 @@ def delete_landmark_service(db: Session, user: User, landmark_id: int):
 
     delete_photo_with_landmark_id(landmark_id)
     delete_landmark(db, landmark)
+    log_landmark_deletion(db, user.id, landmark_id)
 
 
 def get_all_landmarks_service(db: Session):
@@ -55,8 +65,8 @@ def get_landmark_by_id_service(db: Session, landmark_id: int):
     return landmark
 
 
-def get_landmarks_name_service(db: Session, search: str | None):
-    return get_landmarks_by_name(db, search)
+def get_landmarks_name_service(db: Session, search: str | None, limit: int):
+    return get_landmarks_by_name(db, search, limit)
 
 
 def get_landmarks_name_type_sort_service(db: Session, search: str | None, sort: int | None):

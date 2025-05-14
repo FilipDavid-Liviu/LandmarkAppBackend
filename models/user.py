@@ -19,6 +19,7 @@ class User(Base):
         secondary=saved_landmarks,
         back_populates="saved_by"
     )
+    log_entries = relationship("LogEntry", back_populates="user")
 
     def verify_password(self, password: str) -> bool:
         return pwd_context.verify(password, self.password_hash)

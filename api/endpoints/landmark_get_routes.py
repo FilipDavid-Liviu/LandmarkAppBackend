@@ -32,9 +32,10 @@ def get_all_name_type_sort(
 @router.get("/get_all_name", response_model=List[Landmark])
 def get_all_name(
     search: Optional[str] = None,
+    limit: int = 5,
     db: Session = Depends(get_db)
 ):
-    return get_landmarks_name_service(db, search)
+    return get_landmarks_name_service(db, search, limit)
 
 
 @router.get("/get_by_id/{landmark_id}", response_model=Landmark)

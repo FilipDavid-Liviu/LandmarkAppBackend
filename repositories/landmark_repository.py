@@ -51,13 +51,13 @@ def get_landmark_by_id(db: Session, landmark_id: int):
         raise DatabaseError(f"Error fetching landmark: {str(e)}")
 
 
-def get_landmarks_by_name(db: Session, search: str | None):
+def get_landmarks_by_name(db: Session, search: str | None, limit: int):
     query = db.query(LandmarkModel)
     if search:
         normalized_search = normalize_search_text(search)
         normalized_name = normalize_column(LandmarkModel.name)
         query = query.filter(normalized_name.ilike(f"%{normalized_search}%"))
-    return query.order_by(LandmarkModel.id).all()
+    return query.order_by(LandmarkModel.id).limit(limit).all()
 
 
 def get_landmarks_by_name_type_sorted(db: Session, search: str | None, sort: int | None):
