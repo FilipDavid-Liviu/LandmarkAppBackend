@@ -70,7 +70,7 @@ def simulate_attack():
         save_landmark(token, landmark_id)
         print(f"[{i+1}/{ITERATIONS}] Saved landmark {landmark_id}")
         
-        time.sleep(DELAY / 2)  # Shorter delay to simulate abuse
+        time.sleep(DELAY / 2)
 
         unsave_landmark(token, landmark_id)
         print(f"[{i+1}/{ITERATIONS}] Unsave landmark {landmark_id}")
