@@ -16,7 +16,8 @@ from api.endpoints import (
     photo_routes,
     user_routes,
     saved_landmarks_routes,
-    admin_routes
+    admin_routes,
+    utils_routes
 )
 from models import Base
 from exceptions.exceptions import DatabaseError
@@ -47,6 +48,7 @@ app.include_router(saved_landmarks_routes.router)
 app.include_router(landmark_cud_routes.router)
 app.include_router(photo_routes.router)
 app.include_router(admin_routes.router)
+app.include_router(utils_routes.router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -57,21 +59,6 @@ app.add_middleware(
 )
 
 app.mount("/static", StaticFiles(directory=settings.STATIC_DIR), name="static")
-
-@app.get("/health")
-def health_check():
-    return {"status": "OK"}
-
-@app.post("/populate_fake_data")
-def populate_fake_data(
-    db: Session = Depends(get_db),
-    num_landmarks: int = settings.DEFAULT_FAKE_LANDMARKS
-):
-    try:
-        populate_db_fakes(db, num_landmarks, settings.FAKE_BATCH_SIZE)
-        return {"message": "Database populated with fake data"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
 
 @app.exception_handler(AuthenticationError)
 async def authentication_error_handler(request: Request, exc: AuthenticationError):
