@@ -12,7 +12,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "St. Basil's Cathedral",
                 "type": "Place of Worship",
                 "description": "The Cathedral of Vasily the Blessed, commonly known as Saint Basil's Cathedral, is a church in Red Square in Moscow, Russia.",
-                "image": "http://localhost:8000/static/photos/1.jpg"
+                "image": "1.jpg"
             },
             {
                 "lat": 48.8584,
@@ -20,7 +20,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Eiffel Tower",
                 "type": "Monument",
                 "description": "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France.",
-                "image": "http://localhost:8000/static/photos/2.jpg"
+                "image": "2.jpg"
             },
             {
                 "lat": 40.6892,
@@ -28,7 +28,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Statue of Liberty",
                 "type": "Monument",
                 "description": "The Statue of Liberty is a colossal neoclassical sculpture on Liberty Island in New York Harbor in New York City.",
-                "image": "http://localhost:8000/static/photos/3.jpg"
+                "image": "3.jpg"
             },
             {
                 "lat": 40.415853,
@@ -36,7 +36,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Baku Ateshgah",
                 "type": "Place of Worship",
                 "description": "The Ateshgah of Baku is a Zoroastrian temple in Surakhani, a suburb in Baku, Azerbaijan.",
-                "image": "http://localhost:8000/static/photos/4.jpg"
+                "image": "4.jpg"
             },
             {
                 "lat": 34.83189,
@@ -44,7 +44,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Bamiyan Buddhas",
                 "type": "Religious Monument",
                 "description": "The Buddhas of Bamiyan were two 6th-century monumental statues of Gautama Buddha carved into the side of a cliff in the Bamyan valley in the Hazarajat region of central Afghanistan",
-                "image": "http://localhost:8000/static/photos/5.jpg"
+                "image": "5.jpg"
             },
             {
                 "lat": 41.009034,
@@ -52,7 +52,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Hagia Sophia",
                 "type": "Place of Worship",
                 "description": "Hagia Sophia is a former Greek Orthodox Christian patriarchal cathedral, later an Ottoman imperial mosque and now a museum in Istanbul, Turkey.",
-                "image": "http://localhost:8000/static/photos/6.jpg"
+                "image": "6.jpg"
             },
             {
                 "lat": 34.839882,
@@ -60,7 +60,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Himeji Castle",
                 "type": "Fortification",
                 "description": "Himeji Castle is a hilltop Japanese castle complex situated in the city of Himeji which is located in the Hyōgo Prefecture of Japan.",
-                "image": "http://localhost:8000/static/photos/7.jpg"
+                "image": "7.jpg"
             },
             {
                 "lat": 51.1789,
@@ -68,7 +68,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Stonehenge",
                 "type": "Ancient Ruins",
                 "description": "Stonehenge is a prehistoric monument in Wiltshire, England, two miles west of Amesbury. It consists of a ring of standing stones, each around 13 feet high, seven feet wide, and weighing around 25 tons.",
-                "image": "http://localhost:8000/static/photos/8.jpg"
+                "image": "8.jpg"
             },
             {
                 "lat": 19.887595,
@@ -76,7 +76,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Konark Sun Temple",
                 "type": "Place of Worship",
                 "description": "Konark Sun Temple is a 13th-century CE Sun Temple at Konark about 35 kilometres northeast from Puri on the coastline of Odisha, India.",
-                "image": "http://localhost:8000/static/photos/9.jpg"
+                "image": "9.jpg"
             },
             {
                 "lat": 16.7754,
@@ -84,7 +84,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Djinguereber Mosque",
                 "type": "Place of Worship",
                 "description": "The Djinguereber Mosque in Timbuktu, Mali is a famous learning center of Mali built in 1327, and cited as one of the three oldest mosques in the western Saharan region.",
-                "image": "http://localhost:8000/static/photos/10.jpg"
+                "image": "10.jpg"
             },
             {
                 "lat": 41.8902,
@@ -92,7 +92,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Colosseum",
                 "type": "Ancient Ruins",
                 "description": "The Colosseum is an oval amphitheatre in the centre of the city of Rome, Italy, the largest ancient amphitheatre ever built.",
-                "image": "http://localhost:8000/static/photos/11.jpg"
+                "image": "11.jpg"
             },
             {
                 "lat": 29.9792,

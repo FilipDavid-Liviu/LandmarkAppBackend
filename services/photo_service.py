@@ -18,9 +18,8 @@ def upload_photo_service(db: Session, user: User, landmark_id: int, file, base_u
     try:
         delete_photo_with_landmark_id(landmark_id)
         filename = process_image(file, landmark_id)
-        image_url = base_url.rstrip("/") + f"/static/photos/{filename}"
-        update_landmark_image(db, landmark, image_url)
-        return image_url
+        update_landmark_image(db, landmark, filename)
+        return filename
     except Exception as e:
         raise FileProcessingError(f"Error processing image: {str(e)}")
 
