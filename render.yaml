@@ -1,0 +1,21 @@
+services:
+    - type: web
+      name: fastapi-backend
+      env: docker
+      region: frankfurt
+      plan: free
+      dockerfilePath: ./Dockerfile
+      autoDeploy: true
+      envVars:
+          - key: SECRET_KEY
+            value: efg
+          - key: ACCESS_TOKEN_EXPIRE_MINUTES
+            value: "10"
+          - key: PHOTO_UPLOAD_DIR
+            value: static/photos
+          - key: MAX_PHOTO_WIDTH
+            value: "1024"
+          - key: MAX_PHOTO_HEIGHT
+            value: "1024"
+          - key: PHOTO_QUALITY
+            value: "85"
