@@ -15,7 +15,10 @@ class Settings:
     DATABASE_URL: str = os.getenv("DATABASE_URL")
     
     # CORS settings
-    CORS_ORIGINS: list = ["*"]
+    FRONTEND_URL: str = os.getenv("FRONTEND_URL")
+    CORS_ORIGINS = [FRONTEND_URL,
+                    "http://localhost:5173",
+                    "http://127.0.0.1:5173"]
     CORS_ALLOW_CREDENTIALS: bool = True
     CORS_ALLOW_METHODS: list = ["*"]
     CORS_ALLOW_HEADERS: list = ["*"]
