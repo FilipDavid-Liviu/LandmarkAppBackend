@@ -24,7 +24,8 @@ class Settings:
     CORS_ALLOW_HEADERS: list = ["*"]
     
     # Static files
-    STATIC_DIR: str = "static"
+    BASE_DIR = Path(__file__).resolve().parent.parent.parent
+    STATIC_DIR = str(BASE_DIR / "static")
     
     # Logging
     LOG_FILE: str = "performance_log.txt"
