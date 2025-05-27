@@ -100,6 +100,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Great Pyramid of Giza",
                 "type": "Ancient Ruins",
                 "description": "The Great Pyramid of Giza is the largest of the three pyramids in the Giza pyramid complex in Egypt and one of the Seven Wonders of the Ancient World.",
+                "image": "12.jpg"
             },
             {
                 "lat": 37.9715,
@@ -107,6 +108,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Parthenon",
                 "type": "Ancient Ruins",
                 "description": "The Parthenon is a former temple on the Athenian Acropolis, Greece, dedicated to the goddess Athena.",
+                "image": "13.jpg"
             },
             {
                 "lat": 39.9042,
@@ -114,6 +116,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Forbidden City",
                 "type": "Palace",
                 "description": "The Forbidden City in Beijing, China, served as the imperial palace and political center of Chinese government for almost 500 years.",
+                "image": "14.jpg"
             },
             {
                 "lat": 35.6586,
@@ -121,6 +124,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Tokyo Imperial Palace",
                 "type": "Palace",
                 "description": "The Tokyo Imperial Palace is the primary residence of the Emperor of Japan, built on the site of the former Edo Castle.",
+                "image": "15.jpg"
             },
             {
                 "lat": 27.1751,
@@ -128,6 +132,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Taj Mahal",
                 "type": "Religious Monument",
                 "description": "The Taj Mahal is an ivory-white marble mausoleum in Agra, India, commissioned in 1632 by the Mughal emperor Shah Jahan to house the tomb of his favorite wife, Mumtaz Mahal.",
+                "image": "16.jpg"
             },
             {
                 "lat": 35.2992,
@@ -135,6 +140,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Mount Fuji",
                 "type": "Natural",
                 "description": "Mount Fuji is the highest mountain in Japan and an active stratovolcano, considered a sacred symbol of the country.",
+                "image": "17.jpg"
             },
             {
                 "lat": 30.3285,
@@ -142,6 +148,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Petra",
                 "type": "Ancient Ruins",
                 "description": "Petra is a famous archaeological site in Jordan, known for its rock-cut architecture and water conduit system, once the capital of the Nabataean Kingdom.",
+                "image": "18.jpg"
             },
             {
                 "lat": 51.5007,
@@ -149,6 +156,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Big Ben",
                 "type": "Monument",
                 "description": "Big Ben is the nickname for the Great Bell of the clock at the north end of the Palace of Westminster in London, a symbol of British culture.",
+                "image": "19.jpg"
             },
             {
                 "lat": 27.9881,
@@ -156,6 +164,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Mount Everest",
                 "type": "Natural",
                 "description": "Mount Everest is the Earth's highest mountain above sea level, located in the Himalayas on the border between Nepal and China.",
+                "image": "20.jpg"
             },
             {
                 "lat": -13.1631,
@@ -163,6 +172,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Machu Picchu",
                 "type": "Ancient Ruins",
                 "description": "Machu Picchu is a 15th-century Inca citadel located in the Eastern Cordillera of southern Peru, often referred to as the 'Lost City of the Incas.'",
+                "image": "21.jpg"
             },
             {
                 "lat": -25.3444,
@@ -170,6 +180,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Uluru",
                 "type": "Natural",
                 "description": "Uluru, also known as Ayers Rock, is a massive sandstone monolith in central Australia and a sacred site for the Anangu people.",
+                "image": "22.jpg"
             },
             {
                 "lat": -22.9519,
@@ -177,6 +188,7 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Christ the Redeemer",
                 "type": "Religious Monument",
                 "description": "Christ the Redeemer is a 98-foot-tall statue of Jesus Christ in Rio de Janeiro, Brazil, and is one of the New Seven Wonders of the World.",
+                "image": "23.jpg"
             },
             {
                 "lat": -27.125575,
@@ -184,62 +196,71 @@ class LandmarkSeeder(BaseSeeder):
                 "name": "Moai Statues of Easter Island",
                 "type": "Monument",
                 "description": "The Moai statues of Easter Island are massive monolithic human figures carved by the Rapa Nui people between 1250 and 1500.",
+                "image": "24.jpg"
             },
             {
-            "lat": 45.5146,
-            "lng": 25.3676,
+                "lat": 45.5146,
+                "lng": 25.3676,
                 "name": "Bran Castle",
                 "type": "Fortification",
-                "description": "Bran Castle is a historic fortress built in 1377 by Saxons."
+                "description": "Bran Castle is a historic fortress built in 1377 by Saxons.",
+                "image": "25.jpg"
             },
             {
                 "lat": 41.011574,
                 "lng": 28.983269,
                 "name": "Topkapi Palace",
                 "type": "Palace",
-                "description": "Topkapi Palace, located in Istanbul, Turkey, served as the primary residence and administrative center of Ottoman sultans for nearly 400 years."
+                "description": "Topkapi Palace, located in Istanbul, Turkey, served as the primary residence and administrative center of Ottoman sultans for nearly 400 years.",
+                "image": "26.jpg"
             },
             {
                 "lat": 38.691586,
                 "lng": -9.215977,
                 "name": "Belém Tower",
                 "type": "Fortification",
-                "description": "Belém Tower is a fortification constructed between 1514 and 1520 under the direction of architect Francisco de Arruda; the tower was initially built to defend the city and later served as a lighthouse and customs house."
+                "description": "Belém Tower is a fortification constructed between 1514 and 1520 under the direction of architect Francisco de Arruda; the tower was initially built to defend the city and later served as a lighthouse and customs house.",
+                "image": "27.jpg"
             },
             {
                 "lat": 43.0799,
                 "lng": -79.0747,
                 "name": "Niagara Falls",
                 "type": "Natural",
-                "description": "Niagara Falls is a renowned natural wonder straddling the border between Ontario, Canada, and New York, USA."
+                "description": "Niagara Falls is a renowned natural wonder straddling the border between Ontario, Canada, and New York, USA.",
+                "image": "28.jpg"
             },
             {
                 "lat": 31.7780,
                 "lng": 35.2358,
                 "name": "Church of the Holy Sepulchre",
                 "type": "Place of Worship",
-                "description": "The Church of the Holy Sepulchre is one of Christianity's holiest sites. Tradition holds that it encompasses both the location of Jesus's crucifixion at Golgotha and his empty tomb, where he was buried and resurrected."
+                "description": "The Church of the Holy Sepulchre is one of Christianity's holiest sites. Tradition holds that it encompasses both the location of Jesus's crucifixion at Golgotha and his empty tomb, where he was buried and resurrected.",
+                "image": "29.jpg"
             },
             {
                 "lat": 13.4125,
                 "lng": 103.8667,
                 "name": "Angkor Wat",
                 "type": "Place of Worship",
-                "description": "Angkor Wat is a vast temple complex constructed in the early 12th century and was initially dedicated to the Hindu god Vishnu. Over time, it transitioned into a Buddhist temple."
+                "description": "Angkor Wat is a vast temple complex constructed in the early 12th century and was initially dedicated to the Hindu god Vishnu. Over time, it transitioned into a Buddhist temple.",
+                "image": "30.jpg"
             },
             {
                 "lat": -7.6079,
                 "lng": 110.2038,
                 "name": "Borobudur Temple",
                 "type": "Place of Worship",
-                "description": "Borobudur Temple is a 9th-century Mahayana Buddhist monument and the largest of its kind in the world."
+                "description": "Borobudur Temple is a 9th-century Mahayana Buddhist monument and the largest of its kind in the world.",
+                "image": "31.jpg"
             },
             {
                 "lat": 21.4225,
                 "lng": 39.8262,
                 "name": "Kaaba",
                 "type": "Place of Worship",
-                "description": "The Kaaba is Islam's holiest site. Situated at the center of the Masjid al-Haram mosque, it is a cuboid-shaped building. Covered by a black silk curtain known as the Kiswah, the Kaaba serves as the qibla, the direction Muslims face during their five daily prayers."
+                "description": "The Kaaba is Islam's holiest site. Situated at the center of the Masjid al-Haram mosque, it is a cuboid-shaped building. Covered by a black silk curtain known as the Kiswah, the Kaaba serves as the qibla, the direction Muslims face during their five daily prayers.",
+                "image": "32.jpg"
             }
         ]
 
