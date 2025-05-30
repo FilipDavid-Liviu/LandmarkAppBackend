@@ -6,8 +6,8 @@ class UserSeeder(BaseSeeder):
     def __init__(self):
         super().__init__()
         self.dummy_users = [
-            {"username": "david", "password": "abc", "is_admin": True},
-            {"username": "ami", "password": "aa", "is_admin": False},
+            {"username": "david", "password": "123", "is_admin": True},
+            {"username": "admin", "password": "123", "is_admin": False},
         ]
 
     def seed(self):

@@ -30,7 +30,7 @@ async def lifespan(app: FastAPI):
     try:
         Base.metadata.create_all(bind=engine)
         seed_all()
-        monitoring_task = asyncio.create_task(monitoring_loop(check_interval=30))
+        monitoring_task = asyncio.create_task(monitoring_loop(check_interval=60))
         yield
     except Exception as e:
         raise DatabaseError(f"Error during application startup: {str(e)}")
