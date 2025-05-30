@@ -25,7 +25,7 @@ class Settings:
     
     # Static files
     BASE_DIR = Path(__file__).resolve().parent.parent.parent
-    STATIC_DIR = str(BASE_DIR / "static")
+    STATIC_DIR = os.environ.get("STATIC_DIR", str(BASE_DIR / "static"))
     
     # Logging
     LOG_FILE: str = "performance_log.txt"
