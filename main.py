@@ -1,5 +1,4 @@
-from fastapi import FastAPI, Depends, HTTPException, Request
-from sqlalchemy.orm import Session
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
@@ -7,7 +6,6 @@ from contextlib import asynccontextmanager
 import asyncio
 
 
-from fake import populate_db_fakes
 from db import seed_all, engine
 from api.core.deps import get_db
 from api.endpoints import (

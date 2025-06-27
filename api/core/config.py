@@ -49,5 +49,16 @@ class Settings:
             format=self.LOG_FORMAT
         )
 
+    def print_database_info(self):
+        from urllib.parse import urlparse
+
+        if self.DATABASE_URL:
+            parsed = urlparse(self.DATABASE_URL)
+            safe_url = f"{parsed.scheme}://{parsed.username}:***@{parsed.hostname}:{parsed.port}/{parsed.path.lstrip('/')}"
+            print(f"[Startup] Connecting to database: {safe_url}")
+        else:
+            print("[Startup] No DATABASE_URL found!")
+
 settings = Settings()
 settings.setup_logging()
+settings.print_database_info()
